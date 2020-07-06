@@ -25,7 +25,8 @@ class Solution(object):
     #动态规划  压缩空间
     def uniquePathsWithObstacles1(self,obstacleGrid):
         dp=[0 for i in range(len(obstacleGrid[0]))]
-        dp[0]=(obstacleGrid[0][0]==0)
+        if obstacleGrid[0][0]==0:
+            dp[0]=1
         for i in range(len(obstacleGrid)):
             for j in range(len(obstacleGrid[0])):
                 if obstacleGrid[i][j]==1:
